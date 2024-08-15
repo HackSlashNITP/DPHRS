@@ -2,17 +2,16 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-
+import Home from './components/Home/home'
+import Navbar from './components/Navbar/navbar'
 function App() {
 
    
   return (
     <>
-       <div className='text-blue-800 text-[23px] m-auto flex justify-center' >
-          <h1>
-            Hello CypherSync
-          </h1>
-       </div>
+          <Navbar/>
+            <Home/>
+        
     </>
   )
 }
