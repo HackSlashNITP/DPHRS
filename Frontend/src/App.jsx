@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Home from './components/Home/home'
 import Navbar from './components/Navbar/navbar'
+import CardList from './components/Testimonial/CardList'
+import Feature from './components/Features/feature.jsx'
 function App() {
 
    
@@ -11,6 +13,10 @@ function App() {
     <>
           <Navbar/>
             <Home/>
+            <h1 id='testimonial'>  Features</h1>
+            <Feature/>
+            <h1 id='testimonial'>Testimonials</h1>
+           <CardList />
         
     </>
   )

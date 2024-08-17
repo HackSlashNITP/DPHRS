@@ -40,3 +40,10 @@
 .read-the-docs {
   color: #888;
 } */
+#testimonial{
+  justify-content: center;
+  margin-left: 500px;
+  color: white;
+  font-size:80px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
