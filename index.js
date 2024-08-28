@@ -21,8 +21,12 @@ mongoose.connect('mongodb://localhost:27017/healthcare', {
 
 // Set up ethers provider and contract
 const provider = new ethers.providers.JsonRpcProvider('http://localhost:8545'); // Replace with your Ethereum node URL
-const contractAddress = '0xYourContractAddress'; // Replace with your contract address
-const abi = [ /* Your contract ABI here */ ];
+const contractAddress = '0xa853EA63856f0BaB7F80729382932BeeE0bedE32'; 
+
+const contractJson = fs.readFileSync(path.join(__dirname, 'artifacts/contracts/DPHRS.json'), 'utf8');
+const ABI = JSON.parse(contractJson);
+const abi = ABI.abi;
+
 const contract = new ethers.Contract(contractAddress, abi, provider);
 
 // Set up event listeners
