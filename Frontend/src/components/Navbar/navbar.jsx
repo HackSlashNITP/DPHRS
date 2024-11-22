@@ -3,7 +3,7 @@ import './navbar.css'
 const Navbar = () => {
     return (
         <div className='w-[100%] h-[70px]  flex fixed top-[0px] z-[300]'>
-            <div className='main w-[80%] h-[48px] m-auto flex flex-row justify-between justify-center items-center'>
+            <div className='main w-[80%] h-[48px] m-auto flex flex-row justify-between  items-center'>
                 <div className='logo'>
                     <svg width="45" height="40" viewBox="0 0 45 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 8.13706L2.61961 38.6142C2.61961 38.6142 24.9702 38.6142 29.0732 35.5279C33.1762 32.4416 30.9088 12.7665 27.4536 5.24366C23.9984 -2.27918 1 8.13706 1 8.13706Z" stroke="url(#paint0_linear_9_28)" />
@@ -26,10 +26,10 @@ const Navbar = () => {
                 </div>
                 <div className='w-[40%]  h-[30px] flex flex-row justify-center items-center'>
                       <ul className='flex justify-evenly w-[100%] text-white'>
-                        <li>Home </li>
-                        <li>About </li>
-                        <li>Features </li>
-                        <li> Contact</li>
+                        <li><a href="#">Home </a></li>
+                        <li><a  href="#">About</a> </li>
+                        <li><a  href="#">Features</a> </li>
+                        <li><a  href="#">Contact</a> </li>
                       </ul>
                 </div>
             </div>
