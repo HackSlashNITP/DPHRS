@@ -32,4 +32,3 @@ The **Decentralized Personal Health Record (PHR) System** on blockchain is desig
 - Blockchain Node (Ethereum)
   
 ### Installation
-
