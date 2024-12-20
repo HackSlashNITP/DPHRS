@@ -1,8 +1,17 @@
-const { buildModule } = require("@nomicfoundation/hardhat-ignition/modules");
+const hre = require("hardhat");
 
-module.exports = buildModule("DphrsModule", (m) => {
-  // No constructor parameters for DPHRS
-  const dphrs = m.contract("DPHRS");
+async function main() {
+  
+  const dphrs = await hre.ethers.deployContract("DPHRS");
 
-  return { dphrs };
-});
+  // await dphrs.waitForDeployment();
+
+  console.log(dphrs.target);
+}
+
+main()
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
