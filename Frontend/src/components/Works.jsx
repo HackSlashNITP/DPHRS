@@ -41,9 +41,9 @@ function Works() {
   ];
 
   return (
-    <div className="w-full bg-gradient-to-r from-blue-500 to-green-500  h-auto text-center text-white font-poppins ">
+    <div className="w-full bg-gradient-to-r from-blue-500 to-green-500  h-auto text-center text-white font-poppins mt-20">
       <div className="bg-gray-100 w-full h-full overflow-hidden relative ">
-      <div className="text-6xl font-bold ">
+      <div className="text-6xl font-bold mt-20">
   <h1>How It Works</h1>
 </div>
         {steps.map(({ step, title, description }) => (

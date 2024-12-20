@@ -1,0 +1,253 @@
+/* Auth.css */
+
+.auth-container {
+    position: relative;
+    height: 90vh;
+    width: 98vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #000; /* Ensure background color is black */
+}
+
+.button-container {
+    z-index: 2; /* Ensure buttons are above the particles */
+    display: flex;
+    gap: 120px;
+    position: absolute;
+    justify-content: center;
+    width: 100%;
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for visibility */
+}
+
+.button-container.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.btn {
+    padding: 10px 50px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    height: 50px;
+}
+
+.authbutton {
+    background-color: #39FF14; /* Neon green */
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid #39FF14;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14, 0 0 5px #39FF14;
+    box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 3px #39FF14;
+  }
+  
+  .authbutton:hover {
+    background-color: #1B8F0F; /* Darker neon green on hover */
+    color: #ffffff;
+    border-color: #1B8F0F;
+    box-shadow: 0 0 15px #1B8F0F, 0 0 30px #1B8F0F, 0 0 45px #1B8F0F;
+  }
+  
+
+.form-container {
+    z-index: 2; /* Ensure forms are above the particles */
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for visibility */
+}
+
+.form-container.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Auth.css */
+
+
+  
+  body {
+    background-color: #212121;
+    color: #fff;
+    font-family: monospace, serif;
+    letter-spacing: 0.05em;
+  }
+  
+  h1 {
+    font-size: 23px;
+  }
+  
+  #auth-container .form {
+    width: 300px;
+    padding: 64px 15px 24px;
+    margin: 0 auto;
+  }
+  
+  #auth-container .form .control {
+    margin: 0 0 24px;
+  }
+  
+  #auth-container .form .control input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    font-family: monospace, serif;
+    letter-spacing: 0.05em;
+    font-size: 16px;
+  }
+  
+  #auth-container .form .control input:hover, .form .control input:focus {
+    outline: none;
+    border: 0;
+  }
+  
+  #auth-container .form .btn {
+    width: 100%;
+    display: block;
+    padding: 14px 16px;
+    background: transparent;
+    outline: none;
+    border: 0;
+    color: #fff;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 16px;
+  }
+  
+  #auth-container .block-cube {
+    position: relative;
+  }
+  
+  #auth-container .block-cube .bg-top {
+    position: absolute;
+    height: 10px;
+    background: #020024;
+    background: linear-gradient(90deg, #020024 0%, #340979 37%, #00d4ff 94%);
+    bottom: 100%;
+    left: 5px;
+    right: -5px;
+    transform: skew(-45deg, 0);
+    margin: 0;
+  }
+  
+  #auth-container .block-cube .bg-top .bg-inner {
+    bottom: 0;
+  }
+  
+  #auth-container .block-cube .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #020024;
+    background: linear-gradient(90deg, #020024 0%, #340979 37%, #00d4ff 94%);
+  }
+  
+  #auth-container .block-cube .bg-right {
+    position: absolute;
+    background: #020024;
+    background: #00d4ff;
+    top: -5px;
+    z-index: 0;
+    bottom: 5px;
+    width: 10px;
+    left: 100%;
+    transform: skew(0, -45deg);
+  }
+  
+  #auth-container .block-cube .bg-right .bg-inner {
+    left: 0;
+  }
+  
+  #auth-container .block-cube .bg .bg-inner {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  #auth-container .block-cube .bg-inner {
+    background: #212121;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+  }
+  
+  #auth-container .block-cube .text {
+    position: relative;
+    z-index: 2;
+  }
+  
+  #auth-container .block-cube.block-input input {
+    position: relative;
+    z-index: 2;
+  }
+  
+  #auth-container .block-cube.block-input input:focus ~ .bg-right .bg-inner, 
+  #auth-container .block-cube.block-input input:focus ~ .bg-top .bg-inner, 
+  #auth-container .block-cube.block-input input:focus ~ .bg-inner .bg-inner {
+    top: 100%;
+    background: rgba(255, 255, 255, 0.5);
+  }
+  
+  #auth-container .block-cube.block-input .bg-top,
+  #auth-container .block-cube.block-input .bg-right,
+  #auth-container .block-cube.block-input .bg {
+    background: rgba(255, 255, 255, 0.5);
+    transition: background 0.2s ease-in-out;
+  }
+  
+  .block-cube.block-input .bg-right .bg-inner,
+  .block-cube.block-input .bg-top .bg-inner {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .block-cube.block-input:focus .bg-top,
+  .block-cube.block-input:focus .bg-right,
+  .block-cube.block-input:focus .bg, 
+  .block-cube.block-input:hover .bg-top,
+  .block-cube.block-input:hover .bg-right,
+  .block-cube.block-input:hover .bg {
+    background: rgba(255, 255, 255, 0.8);
+  }
+  
+  .block-cube.block-cube-hover:focus .bg .bg-inner, 
+  .block-cube.block-cube-hover:hover .bg .bg-inner {
+    top: 100%;
+  }
+  
+  #auth-container .credits {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 15px 15px;
+    width: 100%;
+    z-index: 111;
+  }
+  
+  #auth-container .credits a {
+    opacity: 0.6;
+    color: #fff;
+    font-size: 11px;
+    text-decoration: none;
+  }
+  
+  #auth-container .credits a:hover {
+    opacity: 1;
+  }
+  
