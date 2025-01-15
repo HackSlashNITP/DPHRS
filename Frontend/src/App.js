@@ -1,9 +1,9 @@
 import React from 'react';
-import Home from './Components/Home';
-import Auth from './Components/Auth';
+import Home from './components/Home';
+import Auth from './components/Auth';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Patientregiester from './Components/Patientregister';
-import Doctorregister from './Components/Doctorregistration';
+import Patientregiester from './components/Patientregister';
+import Doctorregister from './components/Doctorregistration';
 import "./App.css";
 
 function App() {
