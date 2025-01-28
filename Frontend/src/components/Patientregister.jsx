@@ -3,6 +3,7 @@ import React from "react";
 import axios from 'axios';
 import { ethers } from 'ethers';
 import ABI from "../ABI.json";
+import { useState } from "react";
 
 import "./Patientregistration.css";
 const contractABI = ABI;
@@ -33,7 +34,7 @@ function Patientregister() {
       await tx.wait();
 
       // Save to MongoDB
-      await axios.post('/patients', {
+      await axios.post('http://localhost:5000/patients/register', {
         patientId,
         address: patientAddress,
         name,
