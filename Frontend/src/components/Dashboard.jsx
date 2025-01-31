@@ -6,6 +6,7 @@ import 'tailwindcss/tailwind.css';
 const getAccount = async () => {
     //getting address from metamask
     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+    
     return accounts[0];
 }
 
