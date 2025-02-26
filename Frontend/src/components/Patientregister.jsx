@@ -4,20 +4,19 @@ import axios from 'axios';
 import { ethers } from 'ethers';
 import ABI from "../ABI.json";
 import { useState } from "react";
-
 import "./Patientregistration.css";
+import { useNavigate } from "react-router-dom";
 const contractABI = ABI;
 const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 
 
 function Patientregister() {
-  const [patientId, setPatientId] = useState('');
   const [patientAddress, setPatientAddress] = useState('');
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [photo, setPhoto] = useState('');
   const [status, setStatus] = useState('');
-
+  const navigate=useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -32,17 +31,27 @@ function Patientregister() {
 
       const tx = await contract.registerPatient(name,age,photo);
       await tx.wait();
-
+      console.log(tx);
       // Save to MongoDB
-      await axios.post('http://localhost:5000/patients/register', {
-        patientId,
-        address: patientAddress,
-        name,
-        age,
-        photo,
-      });
-
-      setStatus('Patient registered successfully!');
+      setPatientAddress(tx.hash);
+      if(tx.hash){
+        console.log("address",patientAddress);
+        const response=await axios.post('http://localhost:5001/api/patientregister', {
+          address: patientAddress,
+          name,
+          age,
+          photo,
+        });
+        console.log("response:",response.data);
+        if (response.status === 201) {
+          setStatus('Patient registered successfully');
+          const Patientid = response.data.PatientId;
+       
+          navigate(`/patient/${Patientid}`);
+        } else {
+          setStatus("Error saving data to the database");
+        }
+      }
     } catch (error) {
       setStatus('Error registering patient.');
       console.error(error);
@@ -65,7 +74,7 @@ function Patientregister() {
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="Patient Name"
+
                   required
                 />
                 <i>Full Name</i>
@@ -76,7 +85,7 @@ function Patientregister() {
                   type="number"
                   value={age}
                   onChange={(e) => setAge(e.target.value)}
-                  placeholder="Age"
+
                   required
                 />
                 <i>Age</i>

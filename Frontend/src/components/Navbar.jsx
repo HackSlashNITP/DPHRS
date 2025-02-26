@@ -27,9 +27,9 @@ const Navbar = () => {
             />
           </li>
         ) : (
-          <li onClick={handleSearchClick}>
-            <a href="#">
-              <FaSearch /> &nbsp; Search
+          <li  onClick={handleSearchClick}>
+            <a className="flex flex-row" href="#">
+              <FaSearch /> &nbsp; 
             </a>
           </li>
         )}
