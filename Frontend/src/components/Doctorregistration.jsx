@@ -1,12 +1,14 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { ethers } from 'ethers';
+import { useNavigate } from "react-router-dom";
 import ABI from "../ABI.json";
 import axios from 'axios';
 import "./Patientregistration.css";
 import "./doctorregister.css"
 const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 function Doctorregister() {
+  const navigate=useNavigate();
   const [licenseNumber, setlicenseNumber] = useState('');
   const [doctorName, setDoctorName] = useState('');
   const [specialization, setSpecialization] = useState('');
@@ -30,22 +32,25 @@ function Doctorregister() {
       console.log('Transaction:', tx);
       sethash(tx.hash);
       if (tx.hash) {
-        const response = await axios.post("http://localhost:5000/doctors/register", {
+        const response = await axios.post("http://localhost:5001/api/doctorr", {
           licenseNumber,
           doctorName,
           specialization,
           hash: tx.hash
         });
-
+        console.log("response:",response.data);
         if (response.status === 201) {
           setStatus('Doctor registered successfully and saved to MongoDB!');
+          const DoctorId = response.data.doctorId;
+       
+          navigate(`/doctors/${DoctorId}`);
         } else {
           setStatus("Error saving data to the database");
         }
       }
 
     } catch (error) {
-      console.error(error.response.data);
+      console.error(error);
     }
 
   };
