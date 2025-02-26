@@ -36,6 +36,7 @@ const Navbar = () => {
         <li><a href="/">Home</a></li>
         <li><a href="featuresection">Features</a></li>
         <li><a href="/auth">Register</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
       </ul>
       <div className="hamburger" onClick={toggleMenu}>
         <span className="bar"></span>

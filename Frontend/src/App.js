@@ -1,6 +1,8 @@
 import React from 'react';
 import Home from './components/Home';
 import Auth from './components/Auth';
+import Dashboard from './components/Dashboard';
+import Feature from './components/Feature';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Patientregiester from './components/Patientregister';
 import Doctorregister from './components/Doctorregistration';
